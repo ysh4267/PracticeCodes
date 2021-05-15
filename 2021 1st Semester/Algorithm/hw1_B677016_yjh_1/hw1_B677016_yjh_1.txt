@@ -1,0 +1,29 @@
+Algorithm 1 Palindrome Checker
+------------------------------
+Input : Any English guessed palindromic
+Output : Determine whether it is palindromic or not
+Parameter : Deque Q, a list of char D
+while program ended do
+    Let Q.Front = Q.Rear = 0
+        D = 0;
+    input string -> D
+    foreach char C in D
+        if C is lowercase then
+            add C in Q.rear
+        else if C is uppercase then
+            make it lowercase
+            add C in Q.rear
+        end if
+    end foreach
+    while Q is empty do
+        if Q.Front is same with Q.Rear then
+            delete Q.Front
+            if Q is not empty then
+                delete Q.Rear
+        else
+            print D + " is not Palindrome"
+        end if
+    end while
+    if Q is empty then
+        print D + " is not palindrome"
+end while

@@ -1,0 +1,2 @@
+C:\Users\ysh42\Desktop\GSP\StEvent\Debug\StEvent.exe
+C:\Users\ysh42\Desktop\GSP\StEvent\Debug\StEvent.pdb

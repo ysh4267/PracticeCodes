@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ComputerGraphics 3DTutorial 2", "ComputerGraphics 3DTutorial 2.vcxproj", "{48660233-A955-4CC7-A095-27E92C7023F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{48660233-A955-4CC7-A095-27E92C7023F9}.Debug|x64.ActiveCfg = Debug|x64
+		{48660233-A955-4CC7-A095-27E92C7023F9}.Debug|x64.Build.0 = Debug|x64
+		{48660233-A955-4CC7-A095-27E92C7023F9}.Debug|x86.ActiveCfg = Debug|Win32
+		{48660233-A955-4CC7-A095-27E92C7023F9}.Debug|x86.Build.0 = Debug|Win32
+		{48660233-A955-4CC7-A095-27E92C7023F9}.Release|x64.ActiveCfg = Release|x64
+		{48660233-A955-4CC7-A095-27E92C7023F9}.Release|x64.Build.0 = Release|x64
+		{48660233-A955-4CC7-A095-27E92C7023F9}.Release|x86.ActiveCfg = Release|Win32
+		{48660233-A955-4CC7-A095-27E92C7023F9}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8D4EA39A-6B9E-4B4B-A3D2-123115DBC3D6}
+	EndGlobalSection
+EndGlobal

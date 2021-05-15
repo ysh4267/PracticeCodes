@@ -1,0 +1,11 @@
+﻿  StringEvent.cpp
+C:\Users\ysh42\Desktop\GSP\MyongDongKyoJa\StringEvent.cpp(30,11): error C3861: '_T': 식별자를 찾을 수 없습니다.
+C:\Users\ysh42\Desktop\GSP\MyongDongKyoJa\StringEvent.cpp(30,3): error C3861: '_fputts': 식별자를 찾을 수 없습니다.
+C:\Users\ysh42\Desktop\GSP\MyongDongKyoJa\StringEvent.cpp(42,11): error C3861: '_T': 식별자를 찾을 수 없습니다.
+C:\Users\ysh42\Desktop\GSP\MyongDongKyoJa\StringEvent.cpp(42,3): error C3861: '_fputts': 식별자를 찾을 수 없습니다.
+C:\Users\ysh42\Desktop\GSP\MyongDongKyoJa\StringEvent.cpp(46,10): error C3861: '_T': 식별자를 찾을 수 없습니다.
+C:\Users\ysh42\Desktop\GSP\MyongDongKyoJa\StringEvent.cpp(46,2): error C3861: '_fputts': 식별자를 찾을 수 없습니다.
+C:\Users\ysh42\Desktop\GSP\MyongDongKyoJa\StringEvent.cpp(47,2): error C3861: '_fgetts': 식별자를 찾을 수 없습니다.
+C:\Users\ysh42\Desktop\GSP\MyongDongKyoJa\StringEvent.cpp(64,11): error C3861: '_T': 식별자를 찾을 수 없습니다.
+C:\Users\ysh42\Desktop\GSP\MyongDongKyoJa\StringEvent.cpp(64,3): error C3861: '_fputts': 식별자를 찾을 수 없습니다.
+C:\Users\ysh42\Desktop\GSP\MyongDongKyoJa\StringEvent.cpp(65,3): error C3861: '_fputts': 식별자를 찾을 수 없습니다.

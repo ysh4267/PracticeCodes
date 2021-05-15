@@ -1,0 +1,2 @@
+C:\Users\ysh42\Desktop\CGP\ComputerGraphics 3DTutorial 1\Debug\ComputerGraphics 3DTutorial 1.exe
+C:\Users\ysh42\Desktop\CGP\ComputerGraphics 3DTutorial 1\Debug\ComputerGraphics 3DTutorial 1.pdb

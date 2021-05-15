@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MyongDongKyoJa", "MyongDongKyoJa.vcxproj", "{4DE389A3-C1C8-4D1C-BF2F-D57A40ABBBCC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4DE389A3-C1C8-4D1C-BF2F-D57A40ABBBCC}.Debug|x64.ActiveCfg = Debug|x64
+		{4DE389A3-C1C8-4D1C-BF2F-D57A40ABBBCC}.Debug|x64.Build.0 = Debug|x64
+		{4DE389A3-C1C8-4D1C-BF2F-D57A40ABBBCC}.Debug|x86.ActiveCfg = Debug|Win32
+		{4DE389A3-C1C8-4D1C-BF2F-D57A40ABBBCC}.Debug|x86.Build.0 = Debug|Win32
+		{4DE389A3-C1C8-4D1C-BF2F-D57A40ABBBCC}.Release|x64.ActiveCfg = Release|x64
+		{4DE389A3-C1C8-4D1C-BF2F-D57A40ABBBCC}.Release|x64.Build.0 = Release|x64
+		{4DE389A3-C1C8-4D1C-BF2F-D57A40ABBBCC}.Release|x86.ActiveCfg = Release|Win32
+		{4DE389A3-C1C8-4D1C-BF2F-D57A40ABBBCC}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8E23FF79-29A6-413D-B05E-DFC5676CBE0B}
+	EndGlobalSection
+EndGlobal
