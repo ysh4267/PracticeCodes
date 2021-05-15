@@ -1,2 +1,0 @@
-C:\Users\ysh42\Desktop\CGP\GraphicsPiplineProject\Debug\GraphicsPiplineProject.exe
-C:\Users\ysh42\Desktop\CGP\GraphicsPiplineProject\Debug\GraphicsPiplineProject.pdb

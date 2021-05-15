@@ -1,2 +1,0 @@
-C:\Users\ysh42\Desktop\CGP\GraphicsTextureTutorial\Debug\GraphicsTextureTutorial.exe
-C:\Users\ysh42\Desktop\CGP\GraphicsTextureTutorial\Debug\GraphicsTextureTutorial.pdb

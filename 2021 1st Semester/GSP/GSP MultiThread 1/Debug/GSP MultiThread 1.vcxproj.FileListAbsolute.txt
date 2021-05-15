@@ -1,2 +1,0 @@
-C:\Users\ysh42\Desktop\GSP\GSP MultiThread 1\Debug\GSP MultiThread 1.exe
-C:\Users\ysh42\Desktop\GSP\GSP MultiThread 1\Debug\GSP MultiThread 1.pdb
