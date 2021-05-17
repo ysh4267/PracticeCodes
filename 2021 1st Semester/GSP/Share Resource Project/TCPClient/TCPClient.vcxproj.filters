@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\MultithreadTCPServer2\클라이언트\소스.cpp">
+    <ClCompile Include="TCPClient.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

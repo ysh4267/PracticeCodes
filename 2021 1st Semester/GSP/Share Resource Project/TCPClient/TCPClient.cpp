@@ -57,7 +57,11 @@ int recvn(SOCKET s, char *buf, int len, int flags)
 
 int main(int argc, char *argv[])
 {
+    int myaddrlen;
+    char _myip[16];
     int retval;
+    int temp;
+
 
     // 윈속 초기화
     WSADATA wsa;
@@ -77,6 +81,12 @@ int main(int argc, char *argv[])
     retval = connect(sock, (SOCKADDR *)&serveraddr, sizeof(serveraddr));
     if (retval == SOCKET_ERROR) err_quit("connect()");
 
+    // my socket 정보
+    SOCKADDR_IN myaddr;
+    myaddrlen = sizeof(myaddr);
+    getsockname(sock, (SOCKADDR*)&myaddr, &myaddrlen);
+    strncpy(_myip, inet_ntoa(myaddr.sin_addr), 16);
+
     // 데이터 통신에 사용할 변수
     char buf[BUFSIZE + 1];
     int len;
@@ -91,9 +101,12 @@ int main(int argc, char *argv[])
         // '\n' 문자 제거
         len = strlen(buf);
         if (buf[len - 1] == '\n')
-            buf[len - 1] = '\0';
+            buf[len - 1] = ' ';
         if (strlen(buf) == 0)
             break;
+
+        // 자신의 ip주소 전송
+        strcat(buf, _myip);
 
         // 데이터 보내기
         retval = send(sock, buf, strlen(buf), 0);
@@ -116,6 +129,34 @@ int main(int argc, char *argv[])
         buf[retval] = '\0';
         printf("[TCP 클라이언트] %d바이트를 받았습니다.\n", retval);
         printf("[받은 데이터] %s\n", buf);
+
+
+        // 데이터 받기
+        retval = recvn(sock, buf, retval, 0);
+        if (retval == SOCKET_ERROR) {
+            err_display("recv()");
+            break;
+        }
+        else if (retval == 0)
+            break;
+
+        // share데이터 int형으로 저장
+        temp = atoi(buf);
+
+        // 받은 share데이터 출력
+        buf[retval] = '\0';
+        printf("[Share] %s\n", buf);
+
+        // share에 10 더하기
+        temp += 10;
+        sprintf(buf, "%d", temp);
+
+        // 데이터 보내기
+        retval = send(sock, buf, strlen(buf), 0);
+        if (retval == SOCKET_ERROR) {
+            err_display("send()");
+            break;
+        }
     }
 
     // closesocket()

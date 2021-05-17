@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\MultithreadTCPServer2\클라이언트\소스.cpp" />
+    <ClCompile Include="TCPClient.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{A95CF41B-584C-4CFD-A9E1-01DB6ADA33EF}</ProjectGuid>

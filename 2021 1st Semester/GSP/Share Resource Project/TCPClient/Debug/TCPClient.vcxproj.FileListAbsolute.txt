@@ -2,3 +2,5 @@ C:\강의\2021_1\게임서버1\Source(신버전;VC2015~)\Chapter04\TCPClient\Deb
 C:\강의\2021_1\게임서버1\Source(신버전;VC2015~)\Chapter04\TCPClient\Debug\TCPClient.pdb
 C:\Users\ysh42\Downloads\멀티스레드서버 (2)\TCPClient\Debug\TCPClient.exe
 C:\Users\ysh42\Downloads\멀티스레드서버 (2)\TCPClient\Debug\TCPClient.pdb
+C:\Users\ysh42\Desktop\PracticeCodes\2021 1st Semester\GSP\Share Resource Project\TCPClient\Debug\TCPClient.exe
+C:\Users\ysh42\Desktop\PracticeCodes\2021 1st Semester\GSP\Share Resource Project\TCPClient\Debug\TCPClient.pdb

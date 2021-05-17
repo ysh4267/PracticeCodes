@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\MultithreadTCPServer2\서버\소스.cpp" />
+    <ClCompile Include="MultithreadTCPServer.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{78DB1B8E-908D-4FAA-A622-81E38EEC4FB7}</ProjectGuid>
