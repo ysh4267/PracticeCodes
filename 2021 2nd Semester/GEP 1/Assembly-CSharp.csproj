@@ -36,50 +36,10 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Chapter10\AttackArea.cs" />
-     <Compile Include="Assets\Scripts\Chapter15\EnemyCtrl.cs" />
-     <Compile Include="Assets\Scripts\Chapter12\PlayerCtrl.cs" />
-     <Compile Include="Assets\Scripts\Chapter6\InputManager.cs" />
-     <Compile Include="Assets\Scripts\Chapter5\CharacterMove.cs" />
-     <Compile Include="Assets\Scripts\Chapter18\Nameplate.cs" />
-     <Compile Include="Assets\Scripts\Chapter16\AttackArea.cs" />
-     <Compile Include="Assets\Scripts\Chapter18\PlayerCtrl.cs" />
-     <Compile Include="Assets\Scripts\Chapter11\SearchArea.cs" />
-     <Compile Include="Assets\Scripts\Chapter6\PlayerCtrl.cs" />
-     <Compile Include="Assets\Scripts\Chapter10\PlayerCtrl.cs" />
-     <Compile Include="Assets\Scripts\Chapter12\GameRuleCtrl.cs" />
-     <Compile Include="Assets\Scripts\Chapter14\GameRuleCtrl.cs" />
-     <Compile Include="Assets\Scripts\Chapter8\CharacterStatus.cs" />
-     <Compile Include="Assets\Scripts\Chapter10\AttackAreaActivator.cs" />
-     <Compile Include="Assets\Scripts\Chapter18\CharaSynchronizer.cs" />
-     <Compile Include="Assets\Scripts\Chapter13\GameResultGui.cs" />
-     <Compile Include="Assets\Scripts\Chapter11\EnemyCtrl.cs" />
-     <Compile Include="Assets\Scripts\Chapter10\HitArea.cs" />
-     <Compile Include="Assets\Scripts\Chapter11\DropItem.cs" />
-     <Compile Include="Assets\Scripts\Chapter9\CharaAnimation.cs" />
-     <Compile Include="Assets\Scripts\Chapter18\GameRuleCtrl.cs" />
-     <Compile Include="Assets\Scripts\Chapter15\CharacterStatus.cs" />
-     <Compile Include="Assets\Scripts\Chapter13\CharacterStatusGui.cs" />
-     <Compile Include="Assets\Scripts\Chapter18\NetworkManager.cs" />
-     <Compile Include="Assets\Scripts\Chapter18\EnemyGeneratorCtrl.cs" />
-     <Compile Include="Assets\Scripts\Chapter11\CharacterStatus.cs" />
-     <Compile Include="Assets\Scripts\Chapter15\PlayerCtrl.cs" />
-     <Compile Include="Assets\Scripts\Chapter7\FollowCamera.cs" />
-     <Compile Include="Assets\Scripts\Chapter16\DropItem.cs" />
-     <Compile Include="Assets\Scripts\Chapter18\CharacterStatus.cs" />
-     <Compile Include="Assets\Scripts\Chapter14\TitleSceneCtrl.cs" />
-     <Compile Include="Assets\Scripts\Chapter16\AttackAreaActivator.cs" />
-     <Compile Include="Assets\Scripts\Chapter16\EnemyCtrl.cs" />
-     <Compile Include="Assets\Scripts\Chapter16\GameRuleCtrl.cs" />
-     <Compile Include="Assets\Scripts\Chapter18\DropItem.cs" />
-     <Compile Include="Assets\Scripts\Chapter12\EnemyGeneratorCtrl.cs" />
-     <Compile Include="Assets\Scripts\Chapter12\EnemyCtrl.cs" />
-     <Compile Include="Assets\Scripts\Chapter11\AttackArea.cs" />
-     <Compile Include="Assets\Scripts\Chapter18\CharacterStatusGui.cs" />
-     <Compile Include="Assets\Scripts\Chapter13\GameTimerGui.cs" />
-     <Compile Include="Assets\Scripts\Chapter16\PlayerCtrl.cs" />
-     <Compile Include="Assets\Scripts\Chapter18\EnemyCtrl.cs" />
-     <Compile Include="Assets\Scripts\Chapter15\TargetCursor.cs" />
+     <Compile Include="Assets\Scripts\CharacterMove.cs" />
+     <Compile Include="Assets\Scripts\InputManager.cs" />
+     <Compile Include="Assets\Scripts\PlayerCtrl.cs" />
+     <Compile Include="Assets\Scripts\FollowCamera.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.13f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -303,7 +263,7 @@
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.13f1/Editor/Data/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-        <HintPath>C:/Users/양지훈/Desktop/GEP 1/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
+        <HintPath>C:/Users/양지훈/Desktop/PracticeCodes/2021 2nd Semester/GEP 1/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.13f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -651,34 +611,34 @@
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.13f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-        <HintPath>C:/Users/양지훈/Desktop/GEP 1/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+        <HintPath>C:/Users/양지훈/Desktop/PracticeCodes/2021 2nd Semester/GEP 1/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-        <HintPath>C:/Users/양지훈/Desktop/GEP 1/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+        <HintPath>C:/Users/양지훈/Desktop/PracticeCodes/2021 2nd Semester/GEP 1/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
-        <HintPath>C:/Users/양지훈/Desktop/GEP 1/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+        <HintPath>C:/Users/양지훈/Desktop/PracticeCodes/2021 2nd Semester/GEP 1/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-        <HintPath>C:/Users/양지훈/Desktop/GEP 1/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+        <HintPath>C:/Users/양지훈/Desktop/PracticeCodes/2021 2nd Semester/GEP 1/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-        <HintPath>C:/Users/양지훈/Desktop/GEP 1/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+        <HintPath>C:/Users/양지훈/Desktop/PracticeCodes/2021 2nd Semester/GEP 1/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-        <HintPath>C:/Users/양지훈/Desktop/GEP 1/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+        <HintPath>C:/Users/양지훈/Desktop/PracticeCodes/2021 2nd Semester/GEP 1/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-        <HintPath>C:/Users/양지훈/Desktop/GEP 1/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+        <HintPath>C:/Users/양지훈/Desktop/PracticeCodes/2021 2nd Semester/GEP 1/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
-        <HintPath>C:/Users/양지훈/Desktop/GEP 1/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
+        <HintPath>C:/Users/양지훈/Desktop/PracticeCodes/2021 2nd Semester/GEP 1/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-        <HintPath>C:/Users/양지훈/Desktop/GEP 1/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+        <HintPath>C:/Users/양지훈/Desktop/PracticeCodes/2021 2nd Semester/GEP 1/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-        <HintPath>C:/Users/양지훈/Desktop/GEP 1/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+        <HintPath>C:/Users/양지훈/Desktop/PracticeCodes/2021 2nd Semester/GEP 1/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
