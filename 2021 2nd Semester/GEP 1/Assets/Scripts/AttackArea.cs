@@ -4,7 +4,7 @@ using System.Collections;
 
 public class AttackArea : MonoBehaviour {
 	CharacterStatus status;
-	BoxCollider boxCollider;
+	
 	void Start()
 	{
 		status = transform.root.GetComponent<CharacterStatus>();
@@ -24,7 +24,11 @@ public class AttackArea : MonoBehaviour {
 		AttackInfo attackInfo = new AttackInfo();
 		// 공격력 계산.
 		attackInfo.attackPower = status.Power;
-		attackInfo.attacker = transform.root;
+        // 공격 강화 중.
+        if (status.powerBoost)
+            attackInfo.attackPower += attackInfo.attackPower;
+
+        attackInfo.attacker = transform.root;
 		
 		return attackInfo;
 	}
@@ -42,13 +46,13 @@ public class AttackArea : MonoBehaviour {
 	// 공격 판정을 유효로 한다.
 	void OnAttack()
 	{
-		boxCollider.enabled = true;
+		GetComponent<Collider>().enabled = true;
 	}
 	
 	
 	// 공격 판정을 무효로 한다.
 	void OnAttackTermination()
 	{
-		boxCollider.enabled = false;
+		GetComponent<Collider>().enabled = false;
 	}
 }
