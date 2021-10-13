@@ -51,7 +51,7 @@ public class CharacterStatus : MonoBehaviour {
     {
         if (gameObject.tag == "Player")
         {
-            //powerUpEffect = transform.Find("PowerUpEffect").GetComponent<ParticleSystem>();
+            powerUpEffect = transform.Find("PowerUpEffect").GetComponent<ParticleSystem>();
         }
     }
  
@@ -69,7 +69,7 @@ public class CharacterStatus : MonoBehaviour {
         }
         else
         {
-            //powerUpEffect.Stop();
+            powerUpEffect.Stop();
         }
     }
 
