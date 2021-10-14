@@ -1,13 +1,20 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class AttackArea : MonoBehaviour {
 	CharacterStatus status;
+
+	public AudioClip hitSeClip;
+	AudioSource hitSeAudio;
 	
 	void Start()
 	{
 		status = transform.root.GetComponent<CharacterStatus>();
+
+		// 오디오 초기화.
+		hitSeAudio = gameObject.AddComponent<AudioSource>();
+		hitSeAudio.clip = hitSeClip;
+		hitSeAudio.loop = false;
 	}
 	
 	
@@ -24,11 +31,12 @@ public class AttackArea : MonoBehaviour {
 		AttackInfo attackInfo = new AttackInfo();
 		// 공격력 계산.
 		attackInfo.attackPower = status.Power;
-        // 공격 강화 중.
-        if (status.powerBoost)
-            attackInfo.attackPower += attackInfo.attackPower;
 
-        attackInfo.attacker = transform.root;
+		// 공격 강화 중.
+		if (status.powerBoost)
+			attackInfo.attackPower += attackInfo.attackPower;
+		
+		attackInfo.attacker = transform.root;
 		
 		return attackInfo;
 	}
@@ -38,8 +46,9 @@ public class AttackArea : MonoBehaviour {
 	{
 		// 공격 당한 상대의 Damage 메시지를 보낸다.
 		other.SendMessage("Damage",GetAttackInfo());
-		// 공격한 대상을 저장한다.
-		status.lastAttackTarget = other.transform.root.gameObject;
+
+		// 오디오 재생.
+		hitSeAudio.Play();
 	}
 	
 	

@@ -8,16 +8,21 @@ public class DropItem : MonoBehaviour {
 		Heal,
 	};
 	public ItemKind kind;
+
+	public AudioClip itemSeClip;
 	
 	void OnTriggerEnter(Collider other)
 	{	
-		// Player인지 판정. 
+		// Player인지 판정.
 		if( other.tag == "Player" ){
 			// 아이템 획득.
 			CharacterStatus aStatus = other.GetComponent<CharacterStatus>();
 			aStatus.GetItem(kind);
 			// 획득했으면 아이템을 삭제.
 			Destroy(gameObject);
+
+			// 오디오 재생. 
+			AudioSource.PlayClipAtPoint(itemSeClip, transform.position);
 		}
 	}
 

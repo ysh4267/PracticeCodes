@@ -1060,8 +1060,8 @@ GameObject:
   - component: {fileID: 4729051361333841015}
   - component: {fileID: 6130264441482101589}
   - component: {fileID: 6130264441482101610}
-  - component: {fileID: 6130264441482101588}
-  m_Layer: 9
+  - component: {fileID: 7431645320023247662}
+  m_Layer: 11
   m_Name: NW_HEAD2_C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1109,9 +1109,9 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.7
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6130264441482101588
+--- !u!114 &7431645320023247662
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1120,9 +1120,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6178995387284026677}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0501544a19396f14ab1415fd95d30918, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d2a40787051c5b4198ee80d0369f9a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitSeClip: {fileID: 8300000, guid: 5a2cf50dc1c27fa4ca77bff9f4d0d474, type: 3}
 --- !u!1 &6348871070394665815
 GameObject:
   m_ObjectHideFlags: 0
@@ -1199,6 +1200,7 @@ GameObject:
   - component: {fileID: 6130264442078978643}
   - component: {fileID: 6130264442078978640}
   - component: {fileID: 6130264442078978647}
+  - component: {fileID: 24682824299569495}
   - component: {fileID: 6130264442078978645}
   m_Layer: 0
   m_Name: Warg
@@ -1277,7 +1279,7 @@ MonoBehaviour:
   MaxHP: 100
   Power: 10
   lastAttackTarget: {fileID: 0}
-  characterName: Player
+  characterName: Warg
   attacking: 0
   died: 0
   powerBoost: 0
@@ -1310,12 +1312,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitEffect: {fileID: 3679312840190042786, guid: 66dc70e5ddc5f1d488c82d30bb18cb0c, type: 3}
-  waitBaseTime: 2
+  waitBaseTime: 1
   walkRange: 5
   basePosition: {x: 0, y: 0, z: 0}
   dropItemPrefab:
   - {fileID: 9040366426517540939, guid: 2100186de73af384b98a5f73898b1d27, type: 3}
   - {fileID: 1625281284669974337, guid: b4052ff27e85b134888f3d01901383c8, type: 3}
+  deathSeClip: {fileID: 8300000, guid: 627c714ab792a654899d4fe388e2cdf9, type: 3}
+--- !u!114 &24682824299569495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6472370675562576435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3316edc5d9b7d2644aeb7f925161aefb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackSeClip: {fileID: 8300000, guid: e262de02a053aa64cbb0720b5cba9a56, type: 3}
 --- !u!114 &6130264442078978645
 MonoBehaviour:
   m_ObjectHideFlags: 0

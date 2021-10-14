@@ -1351,7 +1351,7 @@ MonoBehaviour:
   MaxHP: 300
   Power: 30
   lastAttackTarget: {fileID: 0}
-  characterName: Player
+  characterName: Dragon
   attacking: 0
   died: 0
   powerBoost: 0
@@ -1384,10 +1384,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitEffect: {fileID: 3679312840190042786, guid: 66dc70e5ddc5f1d488c82d30bb18cb0c, type: 3}
-  waitBaseTime: 2
+  waitBaseTime: 1
   walkRange: 15
   basePosition: {x: 0, y: 0, z: 0}
   dropItemPrefab: []
+  deathSeClip: {fileID: 8300000, guid: 726e9e80b4d73bf41a809555bd937960, type: 3}
 --- !u!114 &6967185799569014764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1400,6 +1401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3316edc5d9b7d2644aeb7f925161aefb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackSeClip: {fileID: 8300000, guid: e262de02a053aa64cbb0720b5cba9a56, type: 3}
 --- !u!114 &6967185799569014765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1718,6 +1720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d2a40787051c5b4198ee80d0369f9a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitSeClip: {fileID: 8300000, guid: 5a2cf50dc1c27fa4ca77bff9f4d0d474, type: 3}
 --- !u!1 &8772080756737883535
 GameObject:
   m_ObjectHideFlags: 0

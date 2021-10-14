@@ -11,6 +11,17 @@ public class GameRuleCtrl : MonoBehaviour {
 	// 씬 전환 시간.
 	public float sceneChangeTime = 3.0f;
 
+	public AudioClip clearSeClip;
+	AudioSource clearSeAudio;
+
+	void Start()
+	{
+		// 오디오 초기화.
+		clearSeAudio = gameObject.AddComponent<AudioSource>();
+		clearSeAudio.loop = false;
+		clearSeAudio.clip = clearSeClip;
+	}
+
 	void Update()
 	{
 		// 게임 종료 조건 성립 후 씬 전환.
@@ -37,5 +48,8 @@ public class GameRuleCtrl : MonoBehaviour {
 	public void GameClear()
 	{
 		gameClear = true;
+
+		// 오디오 재생.
+		clearSeAudio.Play ();
 	}
 }

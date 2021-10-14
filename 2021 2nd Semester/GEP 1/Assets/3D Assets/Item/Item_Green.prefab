@@ -126,3 +126,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kind: 1
+  itemSeClip: {fileID: 8300000, guid: 4ebd7c926422ff94795f91530c6f1f4d, type: 3}
