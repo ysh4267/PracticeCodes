@@ -3,6 +3,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 #include "graphicsclass.h"
 
+
 GraphicsClass::GraphicsClass()
 {
 	m_D3D = 0;
@@ -63,17 +64,17 @@ bool GraphicsClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 
 	// Set the initial position of the camera.
 	m_Camera->SetPosition(0.0f, 0.0f, -5.0f);
-		
+
 	// Create the player model object.
 	playerModel = new ModelClass;
-	if(!playerModel)
+	if (!playerModel)
 	{
 		return false;
 	}
 
 	// Initialize the player model object.
 	result = playerModel->Initialize(m_D3D->GetDevice(), L"./data/car.obj", L"./data/Car_08.dds");
-	if(!result)
+	if (!result)
 	{
 		MessageBox(hwnd, L"Could not initialize the player model object.", L"Error", MB_OK);
 		return false;
@@ -177,11 +178,11 @@ bool GraphicsClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 
 	// Initialize the light object.
 	m_Light->SetAmbientColor(0.15f, 0.15f, 0.15f, 1.0f);
-//	m_Light->SetAmbientColor(0.0f, 0.0f, 0.0f, 1.0f);
+	//	m_Light->SetAmbientColor(0.0f, 0.0f, 0.0f, 1.0f);
 	m_Light->SetDiffuseColor(1.0f, 1.0f, 1.0f, 1.0f);
-//	m_Light->SetDiffuseColor(0.0f, 0.0f, 0.0f, 1.0f);
-//	m_Light->SetDirection(0.0f, 0.0f, 1.0f);
-//	m_Light->SetDirection(1.0f, 0.0f, 0.0f);
+	//	m_Light->SetDiffuseColor(0.0f, 0.0f, 0.0f, 1.0f);
+	//	m_Light->SetDirection(0.0f, 0.0f, 1.0f);
+	//	m_Light->SetDirection(1.0f, 0.0f, 0.0f);
 	m_Light->SetDirection(1.0f, -1.0f, 0.0f);
 	m_Light->SetSpecularColor(1.0f, 1.0f, 1.0f, 1.0f);
 	m_Light->SetSpecularPower(32.0f);
@@ -210,7 +211,7 @@ bool GraphicsClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 	}
 
 	// Initialize the bitmap object.
-	result = m_Bitmap->Initialize(m_D3D->GetDevice(), screenWidth, screenHeight, L"./data/treeSample2.dds", 139, 256);
+	result = m_Bitmap->Initialize(m_D3D->GetDevice(), screenWidth, screenHeight, L"./data/bgGreen.dds", 800, 600);
 	if (!result)
 	{
 		MessageBox(hwnd, L"Could not initialize the bitmap object.", L"Error", MB_OK);
@@ -245,7 +246,7 @@ bool GraphicsClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 void GraphicsClass::Shutdown()
 {
 	// Release the player model object.
-	if(playerModel)
+	if (playerModel)
 	{
 		playerModel->Shutdown();
 		delete playerModel;
@@ -385,10 +386,40 @@ bool GraphicsClass::Frame(int fps, int cpu, float frameTime)
 	return true;
 }
 
+bool GraphicsClass::Frame(int mouseX, int mouseY)
+{
+	bool result;
+	static float rotation = 0.0f;
+
+
+	// Update the rotation variable each frame.
+	rotation += (float)XM_PI * 0.005f;
+	if (rotation > 360.0f)
+	{
+		rotation -= 360.0f;
+	}
+
+	// Set the location of the mouse.
+	result = m_Text->SetMousePosition(mouseX, mouseY, m_D3D->GetDeviceContext());
+	if (!result)
+	{
+		return false;
+	}
+
+	// Render the graphics scene.
+	result = Render(rotation);
+	if (!result)
+	{
+		return false;
+	}
+
+	return true;
+}
+
 bool GraphicsClass::Render(float rotation)
 {
 	XMMATRIX worldMatrix, viewMatrix, projectionMatrix, orthoMatrix;
-	XMMATRIX mapWorldMatrix;
+	XMMATRIX UIMatrix, UIViewMatrix, mapWorldMatrix;
 	bool result;
 	
 	// Clear the buffers to begin the scene.
@@ -399,44 +430,39 @@ bool GraphicsClass::Render(float rotation)
 
 	// Get the world, view, and projection matrices from the camera and d3d objects.
 	m_Camera->GetViewMatrix(viewMatrix);
+	m_Camera->GetViewMatrix(UIViewMatrix);
+	m_D3D->GetWorldMatrix(UIMatrix);
 	m_D3D->GetWorldMatrix(worldMatrix);
 	m_D3D->GetWorldMatrix(mapWorldMatrix);
 	m_D3D->GetProjectionMatrix(projectionMatrix);
 
 	m_D3D->GetOrthoMatrix(orthoMatrix);
 
+	UIViewMatrix = XMMatrixTranslation(0, 0, m_Camera->GetPosition().z + 30.0f);
+	UIMatrix = XMMatrixRotationRollPitchYaw(XMConvertToRadians(m_Camera->GetRotation().x), XMConvertToRadians(m_Camera->GetRotation().y), XMConvertToRadians(m_Camera->GetRotation().z));
+
 	// Turn off the Z buffer to begin all 2D rendering.
 	m_D3D->TurnZBufferOff();
 
 	// Put the bitmap vertex and index buffers on the graphics pipeline to prepare them for drawing.
-	//result = m_Bitmap->Render(m_D3D->GetDeviceContext(), 200, 200);
-	//if (!result)
-	//{
-	//	return false;
-	//}
+	result = m_Bitmap->Render(m_D3D->GetDeviceContext(), 0, -5);
+	if (!result)
+	{
+		return false;
+	}
 
 	// Render the bitmap with the texture shader.
-	result = m_TextureShader->Render(m_D3D->GetDeviceContext(), m_Bitmap->GetIndexCount(), worldMatrix, viewMatrix, orthoMatrix, m_Bitmap->GetTexture());
+	result = m_TextureShader->Render(m_D3D->GetDeviceContext(), m_Bitmap->GetIndexCount(), worldMatrix, UIViewMatrix, orthoMatrix, m_Bitmap->GetTexture());
 	if (!result)
 	{
 		return false;
 	}
-
-	// Turn on the alpha blending before rendering the text.
-	m_D3D->TurnOnAlphaBlending();
-
-	// Render the text strings.
-	result = m_Text->Render(m_D3D->GetDeviceContext(), worldMatrix, orthoMatrix);
-	if (!result)
-	{
-		return false;
-	}
-
-	// Turn off alpha blending after rendering the text.
-	m_D3D->TurnOffAlphaBlending();
 
 	// Turn the Z buffer back on now that all 2D rendering has completed.
 	m_D3D->TurnZBufferOn();
+
+	// Rotate the world matrix by the rotation value so that the triangle will spin.
+	//worldMatrix = XMMatrixRotationY(rotation);
 
 	// Put the player model vertex and index buffers on the graphics pipeline to prepare them for drawing.
 	playerModel->Render(m_D3D->GetDeviceContext());
@@ -444,20 +470,20 @@ bool GraphicsClass::Render(float rotation)
 	worldMatrix = XMMatrixRotationY(XMConvertToRadians(270));
 
 	// Render the player model using the light shader.
-	result = m_LightShader->Render(m_D3D->GetDeviceContext(), playerModel->GetIndexCount(), 
+	result = m_LightShader->Render(m_D3D->GetDeviceContext(), playerModel->GetIndexCount(),
 		worldMatrix, viewMatrix, projectionMatrix,
-		playerModel->GetTexture(), 
+		playerModel->GetTexture(),
 		m_Light->GetDirection(), m_Light->GetAmbientColor(), m_Light->GetDiffuseColor(),
 		m_Camera->GetPosition(), m_Light->GetSpecularColor(), m_Light->GetSpecularPower());
-	
-	if(!result)
+
+	if (!result)
 	{
 		return false;
 	}
 
 	// Rotate the world matrix by the rotation value so that the triangle will spin.
-	mapWorldMatrix =XMMatrixTranslation(0.0f, -1.0f, 0.0f);
-	
+	mapWorldMatrix = XMMatrixTranslation(0.0f, -1.0f, 0.0f);
+
 	// Put the map model vertex and index buffers on the graphics pipeline to prepare them for drawing.
 	mapModel->Render(m_D3D->GetDeviceContext());
 
@@ -477,7 +503,7 @@ bool GraphicsClass::Render(float rotation)
 	{
 		// Put the map model vertex and index buffers on the graphics pipeline to prepare them for drawing.
 		carModel[i].m_carModel->Render(m_D3D->GetDeviceContext());
-		carModel[i].worldMatrix = XMMatrixMultiply(XMMatrixTranslation(-5, 0, i * 3), XMMatrixRotationY(XMConvertToRadians(0)));
+		carModel[i].worldMatrix = XMMatrixMultiply(XMMatrixTranslation(-5.0f, 0, i * 3.0f), XMMatrixRotationY(XMConvertToRadians(0.0f)));
 		// Render the map model using the light shader.
 		result = m_LightShader->Render(m_D3D->GetDeviceContext(), carModel[i].m_carModel->GetIndexCount(),
 			carModel[i].worldMatrix, viewMatrix, projectionMatrix,
@@ -491,6 +517,24 @@ bool GraphicsClass::Render(float rotation)
 		}
 	}
 
+	// Turn off the Z buffer to begin all 2D rendering.
+	m_D3D->TurnZBufferOff();
+
+	// Turn on the alpha blending before rendering the text.
+	m_D3D->TurnOnAlphaBlending();
+
+	// Render the text strings.
+	result = m_Text->Render(m_D3D->GetDeviceContext(), UIViewMatrix * UIMatrix, orthoMatrix);
+	if (!result)
+	{
+		return false;
+	}
+
+	// Turn off alpha blending after rendering the text.
+	m_D3D->TurnOffAlphaBlending();
+
+	// Turn the Z buffer back on now that all 2D rendering has completed.
+	m_D3D->TurnZBufferOn();
 
 	// Present the rendered scene to the screen.
 	m_D3D->EndScene();

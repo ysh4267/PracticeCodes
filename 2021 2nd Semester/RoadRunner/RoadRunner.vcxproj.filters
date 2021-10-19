@@ -15,24 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="modelclass.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="systemclass.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="textclass.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="textureclass.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="textureshaderclass.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="timerclass.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="AlignedAllocationPolicy.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -75,23 +57,29 @@
     <ClInclude Include="lightshaderclass.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="modelclass.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="soundclass.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="systemclass.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="textclass.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="textureclass.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="textureshaderclass.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="timerclass.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="systemclass.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="textclass.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="textureclass.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="textureshaderclass.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="timerclass.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="bitmapclass.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -132,6 +120,24 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="modelclass.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="soundclass.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="systemclass.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="textclass.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="textureclass.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="textureshaderclass.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="timerclass.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

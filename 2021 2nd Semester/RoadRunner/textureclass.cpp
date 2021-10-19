@@ -30,7 +30,6 @@ bool TextureClass::Initialize(ID3D11Device* device, const WCHAR* filename)
 	{
 			return false;
 	}
-
 	// Create shader resource view from loaded data.
 	result = CreateShaderResourceView(device, image.GetImages(), 
 		image.GetImageCount(), image.GetMetadata(), &m_texture);

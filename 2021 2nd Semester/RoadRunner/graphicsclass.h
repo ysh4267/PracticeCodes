@@ -32,7 +32,7 @@ const float SCREEN_NEAR = 0.1f;
 ////////////////////////////////////////////////////////////////////////////////
 class GraphicsClass
 {
-private: 
+private:
 	struct CarModelInfo
 	{
 		ModelClass* m_carModel;
@@ -53,6 +53,7 @@ public:
 	void Shutdown();
 	bool Frame();
 	bool Frame(int, int, float);
+	bool Frame(int, int);
 
 private:
 	bool Render(float);
