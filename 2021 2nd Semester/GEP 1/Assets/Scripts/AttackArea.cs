@@ -46,7 +46,7 @@ public class AttackArea : MonoBehaviour {
 	{
 		// 공격 당한 상대의 Damage 메시지를 보낸다.
 		other.SendMessage("Damage",GetAttackInfo());
-
+		status.lastAttackTarget = other.transform.root.gameObject;
 		// 오디오 재생.
 		hitSeAudio.Play();
 	}
